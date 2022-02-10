@@ -1,0 +1,228 @@
+Process to create a full stack structure inside an html template:
+
+
+1) First it will be necessary to create the file package.json inside the main folder of the html / bootstrap template
+In order to do this, open the console and type:
+
+npm init -y
+
+In this way the file package.json will be created in the folder
+
+2) Now we need to install al the necessary components to be sure that our Node.js structure is really working.
+Below we have the list of all the mandatory modules that are necessary to install to ensure the basic functions:
+
+
+1- npm init (this command initialize the new Node.js app)
+
+2 - We have now install Express first, the framework that allow 
+our Node.js App to work.
+
+In order to do this, we have to type the following command in the terminal:
+
+npm install express --save
+
+Thanks to this command, we will install Express in the App directory 
+and save it in the dependencies list. 
+
+For more information follow the link Below:
+
+https://expressjs.com/en/starter/installing.html
+
+
+3 - Now we have to install first node itself, the language that allows our
+app to work.
+
+In order to do this, type the following command in the console:
+
+npm i node
+
+node": "^17.4.0" it will be installed.
+
+4 -Now we must install nodemon, an additional app that allow to our app to run in 
+real time, while we still working.
+
+In order to do this, type the following code in the terminal:
+
+npm install -g nodemon
+
+Nodemon is a utility depended on by over 1.5 million projects, that will monitor for any changes 
+in your source and automatically restart your server. Perfect for development.
+
+Swap nodemon instead of node to run your code, and now your process will automatically restart 
+when your code changes. 
+
+Features
+
+    Automatic restarting of application.
+    Detects default file extension to monitor.
+    Default support for node but easy to run any executable, such as python, ruby, make, etc.
+    Ignoring specific files or directories.
+    Watch specific directories.
+    Works with server applications or one time run utilities and REPLs.
+    Scriptable through node require statements.
+    Open source and available on github.
+
+
+After we run the code, "nodemon": "^2.0.15" will be installed
+
+5- Now we have to install EJS, that is a mixed language (like JSX in React for example) that lets the user
+generate HTML markup with plain JavaScript.
+
+Official page here:
+
+https://ejs.co/
+
+to install run the following command:
+
+npm install ejs
+
+version ejs": "^3.1.6" will be installed.
+
+6 - Next step, we need to install morgan.
+
+morgan is middleware created specifically for node.js
+
+A middleware is  basically a function that will the receive the Request and Response objects,
+just like your route Handlers do. As a third argument you have another function which you
+should call once your middleware code completed.
+
+For more detailed information about how a middleware works please read this article:
+
+https://selvaganesh93.medium.com/how-node-js-middleware-works-d8e02a936113
+
+the core concepts are:
+
+The middleware, that must be put on the top our index.js file, right after the import sequence 
+and he is a sort of "guardian" that allow only the authorized users to access to the backend /
+front end data; the middleware is for example the function that handle a log in request.
+
+More in to details :
+
+Middleware functions are functions that have access to the request object (req), 
+the response object (res), and the next function in the application’s request-response cycle. 
+The next function is a function in the Express router which, when invoked, 
+executes the middleware succeeding the current middleware.
+
+Middleware functions can perform the following tasks:
+
+    Execute any code.
+    Make changes to the request and the response objects.
+    End the request-response cycle.
+    Call the next middleware in the stack.
+
+If the current middleware function does not end the request-response cycle, it must call 
+next() to pass control to the next middleware function. 
+Otherwise, the request will be left hanging.
+
+Starting with Express 5, middleware functions that return a Promise will call next(value) 
+when they reject or throw an error. next will be called with either the rejected value 
+or the thrown Error.
+
+A middleware is a "guard dog" that will execute a code upon request, when certain conditions 
+(access credential match) are satisfied 
+
+Among the many that are available, morgan is one middleware app. 
+
+The name is a joke, connected to the character of Dexter, surname, Morgan.
+
+because morgan handle first the request / response object,(req, res) to dig deeper in this
+topic please read here:
+
+https://www.pabbly.com/tutorials/express-js-request-response/
+
+Morgan: Morgan is an HTTP request level Middleware. It is a great tool that logs the 
+requests along with some other information depending upon its configuration and the preset used. 
+It proves to be very helpful while debugging and also if you want to create Log files.
+
+Here the command:
+
+npm i express morgan
+
+morgan "morgan": "^1.10.0", will be installed
+
+7 - Install DotEnv, a api for node.js that store sensitive values (like the passwords and also 
+virtual ports numbers), remembering to do not upload it in git hub because this file can contain 
+sensitive information like passwords.
+
+To proceed, type the following command in the terminal:
+
+npm i dotenv
+
+in package.json will appear -> dotenv": "^16.0.0"
+
+then we must create system file called .env (DotEnv) that require a special sintax, no 
+capital letter ad no braces, no quotation marks, example follow:
+
+DB_HOST=localhost
+DB_USER=admin
+DB_PASSWORD=password
+
+8 - Install jQuery, a special JavaScript library:
+
+npm i jquery
+
+this command will install jQuery
+
+"jquery": "^3.6.0"
+
+!Warning -> do not type npm i jQuery because an old and deprecated version will be installed
+no capital letter!
+
+
+
+jQuery Syntax
+
+The jQuery syntax is tailor-made for selecting HTML elements and performing some action on 
+the element(s).
+
+Basic syntax is: $(selector).action()
+
+    A $ sign to define/access jQuery
+    A (selector) to "query (or find)" HTML elements
+    A jQuery action() to be performed on the element(s)
+
+Examples:
+
+$(this).hide() - hides the current element.
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+
+$("#test").hide() - hides the element with id="test".
+
+9 - install pug (former name Jade) a view engine, a api that render the components in
+to the browser:
+
+ npm install pug
+
+ version -> "pug": "^3.0.2"
+
+10 - Install parcel a parallel framework (close to express):
+
+npm install --save-dev parcel
+
+ "parcel": "^2.2.1"
+
+ 11 - Install yargs (Yargs helps you build interactive command line tools by parsing arguments 
+ and generating an elegant user interface.)
+
+npm i yargs@next
+
+"yargs": "^17.1.1-candidate.0"
+
+
+12 - Bcrypt an hash generator for handle the passwords:
+
+npm i bcrypt
+
+"bcrypt": "^5.0.1",
+
+
+------------------------------------------------------------------------------------
+
+
+Set up is now complete, next step check how  to convert the entire web site to the back end side
+
+
+
